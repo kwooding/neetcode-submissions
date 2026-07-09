@@ -1,0 +1,28 @@
+class Solution:
+    def characterReplacement(self, s: str, k: int) -> int:
+        w = len(s)
+        l = 0
+        longest = 0
+        count = dict()
+        for r in range(w):
+            if s[r] not in count:
+                count[s[r]] = 0
+            count[s[r]] += 1
+            
+
+            while (r-l+1) - max(count.values()) > k:
+                count[s[l]] -= 1
+                l += 1
+            
+            longest = max(longest,(r-l + 1))
+
+        
+        return longest
+
+
+                
+        
+            
+            
+
+            
