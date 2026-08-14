@@ -1,0 +1,7 @@
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        c = Counter(s)
+        for k in c:
+            if c[k] == 1:
+                return s.index(k)
+        return -1
